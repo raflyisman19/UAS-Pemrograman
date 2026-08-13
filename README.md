@@ -7,7 +7,6 @@
     <!-- CSS Framework: Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom CSS */
         .custom-badge {
             background-color: #10b981;
             color: white;
@@ -19,7 +18,7 @@
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col md:flex-row">
 
-    <!-- Sidebar Navigation (Anggota 1 & 2) -->
+    <!-- Sidebar Navigation -->
     <aside class="w-full md:w-72 bg-slate-900 text-slate-200 flex-shrink-0 p-5 flex flex-col justify-between">
         <div>
             <!-- Logo Header -->
@@ -58,7 +57,7 @@
     <!-- Main Content Area -->
     <main class="flex-1 p-6 md:p-10 overflow-y-auto">
 
-        <!-- Banner / Hero Section (Anggota 1) -->
+        <!-- Banner / Hero Section -->
         <section id="overview" class="mb-8 bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 md:p-8 text-white shadow-lg">
             <span class="custom-badge font-semibold uppercase tracking-wider mb-2 inline-block">Platform Belajar Online</span>
             <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Kuasai Web Development dari Nol</h2>
@@ -68,12 +67,12 @@
             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" alt="Banner Pembelajaran Web" class="w-full h-56 object-cover rounded-xl shadow-inner mt-4">
         </section>
 
-        <!-- Section Modul & Media Pemutar (Anggota 2) -->
+        <!-- Section Modul & Media Pemutar -->
         <section id="materi" class="mb-8 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
             <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                 <h3 class="text-2xl font-bold text-slate-800">Modul Pembelajaran</h3>
                 
-                <!-- Filter Search Bar (Anggota 3) -->
+                <!-- Filter Search Bar -->
                 <div class="relative w-full md:w-64">
                     <input type="text" id="searchInput" placeholder="Cari topik materi..." class="w-full pl-3 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 </div>
@@ -95,9 +94,9 @@
                 </li>
             </ul>
 
-            <!-- Media Section (Video YouTube & Player Audio Podcast Edukasi Suara) -->
+            <!-- Media Section -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Video Embed YouTube (Tutorial HTML5) -->
+                <!-- Video Embed YouTube -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
                     <h4 class="font-bold text-slate-700 mb-2 flex items-center">🎥 Video Modul Pembelajaran (HTML5 Dasar)</h4>
                     <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-sm">
@@ -105,13 +104,12 @@
                     </div>
                 </div>
 
-                <!-- Podcast Audio Pemutar Suara Saja -->
+                <!-- Podcast Audio Pemutar Suara -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
                     <div>
                         <h4 class="font-bold text-slate-700 mb-2 flex items-center">🎙️ Podcast Edukasi: Sesi Diskusi Pemrograman Web</h4>
                         <p class="text-xs text-slate-500 mb-4">Dengarkan pembahasan audio interaktif mengenai pentingnya memahami pondasi HTML5, CSS, dan JavaScript modern.</p>
                         
-                        <!-- Banner Visual Podcast -->
                         <div class="bg-slate-900 text-emerald-400 p-4 rounded-lg mb-4 flex items-center space-x-3 shadow-inner">
                             <div class="text-3xl animate-pulse">📻</div>
                             <div class="text-xs">
@@ -121,7 +119,7 @@
                         </div>
                     </div>
 
-                    <!-- Elemen Audio Player Native HTML5 (Suara) -->
+                    <!-- Elemen Audio Player Native HTML5 -->
                     <audio controls class="w-full">
                         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                         Browser Anda tidak mendukung pemutar audio.
@@ -130,7 +128,7 @@
             </div>
         </section>
 
-        <!-- Section Tabel Jadwal & Progress (Anggota 1) -->
+        <!-- Section Tabel Jadwal -->
         <section id="jadwal" class="mb-8 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
             <h3 class="text-2xl font-bold text-slate-800 mb-4">Jadwal Mentoring & Live Session</h3>
             <div class="overflow-x-auto">
@@ -161,7 +159,7 @@
             </div>
         </section>
 
-        <!-- Section Form Pendaftaran (Anggota 3) -->
+        <!-- Section Form Pendaftaran -->
         <section id="pendaftaran" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
             <h3 class="text-2xl font-bold text-slate-800 mb-2">Formulir Pendaftaran Program</h3>
             <p class="text-sm text-slate-500 mb-6">Isi data diri Anda di bawah ini untuk mengakses materi penuh.</p>
@@ -192,15 +190,14 @@
                 </button>
             </form>
 
-            <!-- Alert Response JS -->
             <div id="alertNotification" class="hidden mt-4 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm"></div>
         </section>
 
     </main>
 
-    <!-- JavaScript Elements (Anggota 3) -->
+    <!-- JavaScript Elements -->
     <script>
-        // 1. Logika Submit Form
+        // Logika Submit Form
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nama = document.getElementById('fullname').value;
@@ -213,7 +210,7 @@
             this.reset();
         });
 
-        // 2. Logika Search/Filter Modul Materi Real-time
+        // Logika Search/Filter Modul Materi Real-time
         document.getElementById('searchInput').addEventListener('keyup', function() {
             const filterValue = this.value.toLowerCase();
             const items = document.querySelectorAll('.materi-item');
